@@ -1,3 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["./crates/*"]
+members = ["./crates/*", "crates/sakura-ecs", "crates/sakura-runtime", "crates/sakura-winit"]
+
+[workspace.dependencies]
+wgpu = { version = "0.19" }

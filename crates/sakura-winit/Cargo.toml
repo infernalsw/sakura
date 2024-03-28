@@ -1,0 +1,9 @@
+[package]
+name = "sakura-winit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winit = "0.29"
+
+wgpu = { workspace = true }
