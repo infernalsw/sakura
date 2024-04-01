@@ -1,0 +1,8 @@
+[package]
+name = "sakura-gpu"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wgpu = { workspace = true }
+tokio = { workspace = true }

@@ -1,6 +1,9 @@
 [workspace]
 resolver = "2"
-members = ["./crates/*", "crates/sakura-ecs", "crates/sakura-runtime", "crates/sakura-winit"]
+members = ["./engine/*", "./editor/*", "editor/sakura-editor"]
 
 [workspace.dependencies]
+glam = { version = "0.27" }
+mlua = { version = "0.9", features = ["lua54", "async", "serialize", "macros"] }
+tokio = { version = "1", features = ["full"] }
 wgpu = { version = "0.19" }

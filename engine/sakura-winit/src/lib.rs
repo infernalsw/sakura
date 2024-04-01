@@ -19,15 +19,16 @@ pub struct ViewportBuilder {
     color: wgpu::Color,
 }
 
-impl ViewportBuilder {
-    /// Create a new viewport builder.
-    pub fn new() -> Self {
+impl Default for ViewportBuilder {
+    fn default() -> Self {
         Self {
             inner: winit::window::WindowBuilder::new(),
             color: wgpu::Color::BLACK,
         }
     }
+}
 
+impl ViewportBuilder {
     /// Apply a function to the inner `WindowBuilder`.
     pub fn with(self, f: impl FnOnce(WindowBuilder) -> WindowBuilder) -> Self {
         Self {
@@ -53,7 +54,7 @@ impl ViewportBuilder {
     }
 
     /// Initialize the window with the given title.
-    pub fn init<'a, T>(
+    pub fn build<'a, T>(
         self,
         event_loop: &'a EventLoopWindowTarget<T>,
         instance: &'a wgpu::Instance,
